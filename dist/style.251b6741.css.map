@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles\\style.scss"],"names":[],"mappings":"AAAA,MAAM,CAAC;EACL,gBAAgB,EAAE,MAAM;CACzB;;AACD,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;CACd","file":"style.251b6741.css","sourceRoot":"..\\src","sourcesContent":["header {\r\n  background-color: bisque;\r\n}\r\n.header-menu {\r\n  display: flex;\r\n}\r\n"]}
