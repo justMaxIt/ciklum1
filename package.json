@@ -1,0 +1,28 @@
+{
+  "name": "first-calendar",
+  "version": "1.0.0",
+  "description": "simple meeting planning calendar js",
+  "main": "app.js",
+  "scripts": {
+    "serve": "parcel ./src/index.html -p 2000 --open",
+    "build": "parcel build ./src/index.html --no-source-maps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justMaxIt/ciklum1.git"
+  },
+  "keywords": [
+    "js",
+    "calendar",
+    "ciklum"
+  ],
+  "author": "Maksym <maximfedor2015@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justMaxIt/ciklum1/issues"
+  },
+  "homepage": "https://github.com/justMaxIt/ciklum1#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
