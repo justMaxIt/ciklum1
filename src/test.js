@@ -1,15 +1,35 @@
-let arr = [];
+let data = [];
+
 const form = document.querySelector(".form");
 const input = document.querySelector("#input");
 const selectors = document.querySelectorAll("#second-page select");
 
-// arr.push(input.currentValue);
-
-form.addEventListener("submit", (e) => {
+function add(e) {
   e.preventDefault();
-  arr.push(input.value);
+  data.push(
+    Object.assign(
+      { text: input.value },
+      Array.from(selectors).reduce(
+        (acc, cur) => ({
+          ...acc,
+          [cur.id]: cur.value,
+        }),
+        {}
+      )
+    )
+  );
+  const calendarRow = document.getElementsByTagName("tr");
+  if (data !== []) {
+    let cells = calendarRow[data[data.length - 1].time].querySelectorAll("td");
+    console.log(calendarRow, cells);
+    cells[data[data.length - 1].day].insertAdjacentHTML(
+      "afterbegin",
+      newEvent()
+    );
+  }
+}
+form.addEventListener("submit", add);
 
-  console.log(input.value, arr);
-});
-
-console.log(arr);
+function newEvent() {
+  return data[data.length - 1].text;
+}

@@ -16,10 +16,7 @@ function toggle() {
 
 //table selector
 const calendarRow = document.getElementsByTagName("tr");
-for (i = 1; i < calendarRow.length; i++) {
-  let cells = calendarRow[i].querySelectorAll("td");
-  cells[0].insertAdjacentHTML("afterbegin", "");
-}
+for (i = 1; i < calendarRow.length; i++) {}
 
 const list = [];
 const users = ["Maria", "Bob", "Alex"];
@@ -57,3 +54,13 @@ data.forEach((block) => {
 // }
 // myFunction();
 console.log(input.value, div);
+
+function deleteCheck(e) {
+  const item = e.target;
+  //DELETE TODO
+  if (item.classList[0] === "trash-btn") {
+    const todo = item.parentElement;
+    todo.classList.add("fall");
+    todo.remove();
+  }
+}
