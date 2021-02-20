@@ -3,6 +3,9 @@ let data = [];
 const form = document.querySelector(".form");
 const input = document.querySelector("#input");
 const selectors = document.querySelectorAll("#second-page select");
+const calendarRow = document.getElementsByTagName("tr");
+
+form.addEventListener("submit", add);
 
 function add(e) {
   e.preventDefault();
@@ -18,18 +21,20 @@ function add(e) {
       )
     )
   );
-  const calendarRow = document.getElementsByTagName("tr");
+
   if (data !== []) {
     let cells = calendarRow[data[data.length - 1].time].querySelectorAll("td");
-    console.log(calendarRow, cells);
-    cells[data[data.length - 1].day].insertAdjacentHTML(
-      "afterbegin",
-      newEvent()
-    );
+    console.log(data);
+    cells[data[data.length - 1].day].appendChild(newEvent());
+    // cells.appendChild();
   }
 }
-form.addEventListener("submit", add);
 
 function newEvent() {
-  return data[data.length - 1].text;
+  let eventDiv = document.createElement("div");
+  eventDiv.id = "event";
+  eventDiv.setAttribute("style", "float:left;width:100%;background-color:red");
+  eventDiv.insertAdjacentHTML("afterbegin", data[data.length - 1].text);
+  console.log(eventDiv);
+  return eventDiv;
 }
